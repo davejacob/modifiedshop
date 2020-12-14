@@ -104,7 +104,7 @@ else { echo xtc_draw_hidden_field('specials_action', 'insert'); }
 echo xtc_draw_hidden_field('products_price_hidden', $pInfo->products_price);
 
 $arrow = 'arrow_down.gif';
-if (isset($sInfo->specials_quantity) || isset($sInfo->specials_new_products_price) || isset($sInfo->specials_date_added) || $sInfo->expires_date > 0) 
+if (isset($sInfo->specials_quantity) || isset($sInfo->specials_new_products_price) || isset($sInfo->specials_date_added) || (isset($sInfo->expires_date) && $sInfo->expires_date > 0)) 
 {
   $arrow = 'arrow_down_red.gif';
   if (isset($sInfo->status) && $sInfo->status == 1) { $arrow = 'arrow_down_green.gif'; }
